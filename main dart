@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tes/detail_mhs.dart;
-import 'package:tes/profile.dart;
-
-import 'daftar_mhs.dart;
+ 
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +11,80 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Demo Flutter',
+      title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.deepPurple,
-          backgroundColor: const Color(0xFF6D8BF7), // Tetapkan warna latar belakang di sini
-        ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: prof(),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Naldo App"),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Container(
+            width: 300,
+            height: 150,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 2,
+                color: Color.fromARGB(255, 205, 232, 5),
+              ),
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/Me.jpeg'), // Ganti 'Asset' dengan 'assets'
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.location_city),
+                    Text("Malang"),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.contact_emergency),
+                    Text("0812345678910"),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
