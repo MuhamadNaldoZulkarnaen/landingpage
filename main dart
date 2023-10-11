@@ -1,51 +1,16 @@
 import 'package:flutter/material.dart';
- 
 
 void main() {
-  runApp((new MaterialApp(
+  runApp(new MaterialApp(
     title: "UNO PAY APPLICATION",
     home: new HalamanSatu(),
   ));
 }
 
-
 class HalamanSatu extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return new Scaffold(
         backgroundColor: const Color.fromARGB(255, 2, 54, 97),
         appBar: new AppBar(
             backgroundColor: Colors.black,
@@ -80,3 +45,5 @@ class _MyHomePageState extends State<MyHomePage> {
         );
   }
 }
+
+           
