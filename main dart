@@ -33,7 +33,7 @@ class HalamanSatu extends StatelessWidget {
               width: 375,
               height: 435,
             ),
-            
+            SizedBox(height: 18.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -47,6 +47,7 @@ class HalamanSatu extends StatelessWidget {
                       color: Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
+                  
                   child: Center(
                     child: Text(
                       "Login",
@@ -78,15 +79,21 @@ class HalamanSatu extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 18.0),
+
             Text(
               "Selamat Datang di Uno Pay",
               style: TextStyle(fontSize: 24),
             ),
+            SizedBox(height: 18.0),
+Text("      Bergabunglah dengan jutaan pelanggan puas yang telah memilih Uno Pay sebagai solusi pembayaran mereka", style: TextStyle(fontSize: 14)
+,),
+SizedBox(height: 16.0),
+Text("Jadilah bagian dari perubahan dan buat hidup Anda lebih mudah dengan kami", style: TextStyle(fontSize: 14),),
+
           ],
         ),
       ),
     );
   }
 }
-
-           
