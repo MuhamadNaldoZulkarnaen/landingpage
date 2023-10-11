@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
  
 
 void main() {
-  runApp(const MyApp());
+  runApp((new MaterialApp(
+    title: "UNO PAY APPLICATION",
+    home: new HalamanSatu(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+
+class HalamanSatu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -43,48 +46,37 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Naldo App"),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Container(
-            width: 300,
-            height: 150,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 2,
-                color: Color.fromARGB(255, 205, 232, 5),
-              ),
-              borderRadius: BorderRadius.circular(24),
+        backgroundColor: const Color.fromARGB(255, 2, 54, 97),
+        appBar: new AppBar(
+            backgroundColor: Colors.black,
+            leading: new Icon(Icons.home),
+            title: new Center(
+              child: new Text("UNO PAY"),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/Me.jpeg'), // Ganti 'Asset' dengan 'assets'
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.location_city),
-                    Text("Malang"),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.contact_emergency),
-                    Text("0812345678910"),
-                  ],
-                ),
-              ],
-            ),
+            actions: <Widget>[
+              new Icon(Icons.wifi),
+              new Icon(Icons.battery_full_outlined),
+              new Icon(Icons.signal_cellular_0_bar)
+            ]),
+        body: new Container(
+            child: new Column(children: <Widget>[
+          new Image.asset(
+            "img/WhatsApp Image 2023-10-11 at 13.55.04.jpeg",
+            width: 375,
+            height: 435,
           ),
-        ),
-      ),
-    );
+          new Center(
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(
+                "Selamat Datang di Uno Pay",
+                style: TextStyle(fontSize: 24),
+              ),
+            ]),
+          )
+        ]
+        )
+        )
+        );
   }
 }
