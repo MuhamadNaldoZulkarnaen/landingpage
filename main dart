@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:tes/detail_mhs.dart;
+import 'package:tes/profile.dart;
+
+import 'daftar_mhs.dart;
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Demo Flutter',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.deepPurple,
+          backgroundColor: const Color(0xFF6D8BF7), // Tetapkan warna latar belakang di sini
+        ),
+        useMaterial3: true,
+      ),
+      home: prof(),
+    );
+  }
+}
