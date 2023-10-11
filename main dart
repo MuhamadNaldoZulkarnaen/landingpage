@@ -1,48 +1,91 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: "UNO PAY APPLICATION",
-    home: new HalamanSatu(),
+    home: HalamanSatu(),
   ));
 }
 
 class HalamanSatu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        backgroundColor: const Color.fromARGB(255, 2, 54, 97),
-        appBar: new AppBar(
-            backgroundColor: Colors.black,
-            leading: new Icon(Icons.home),
-            title: new Center(
-              child: new Text("UNO PAY"),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 2, 54, 97),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: Icon(Icons.home),
+        title: Center(
+          child: Text("UNO PAY"),
+        ),
+        actions: <Widget>[
+          Icon(Icons.wifi),
+          Icon(Icons.battery_full_outlined),
+          Icon(Icons.signal_cellular_0_bar),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              image: AssetImage('images/WhatsApp Image 2023-10-11 at 13.55.04.jpeg'),
+              width: 375,
+              height: 435,
             ),
-            actions: <Widget>[
-              new Icon(Icons.wifi),
-              new Icon(Icons.battery_full_outlined),
-              new Icon(Icons.signal_cellular_0_bar)
-            ]),
-        body: new Container(
-            child: new Column(children: <Widget>[
-          new Image.asset(
-            "img/WhatsApp Image 2023-10-11 at 13.55.04.jpeg",
-            width: 375,
-            height: 435,
-          ),
-          new Center(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text(
-                "Selamat Datang di Uno Pay",
-                style: TextStyle(fontSize: 24),
-              ),
-            ]),
-          )
-        ]
-        )
-        )
-        );
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 146,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    border: Border.all(
+                      width: 2,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 53),  // Jarak antara "Login" dan "Sign Up"
+                Container(
+                  width: 146,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 2,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              "Selamat Datang di Uno Pay",
+              style: TextStyle(fontSize: 24),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
