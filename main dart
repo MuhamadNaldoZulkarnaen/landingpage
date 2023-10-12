@@ -82,7 +82,7 @@ class HalamanSatu extends StatelessWidget {
             SizedBox(height: 22.0),
 
             Text(
-              "Selamat Datang di Uno Pay",
+              "Selamat Datang di Uno Pay!",
               style: TextStyle(fontSize: 24),
             ),
             SizedBox(height: 22.0),
