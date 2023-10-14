@@ -1,96 +1,154 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    title: "UNO PAY APPLICATION",
-    home: HalamanSatu(),
-  ));
+  runApp(MyApp());
 }
 
-class HalamanSatu extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: LoginScreen(),
+    );
+  }
+}
+
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 2, 54, 97),
+      backgroundColor: const Color.fromRGBO(78, 180, 201, 1),
+
+
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(1, 52, 65, 1),
         leading: Text("9:41", style: TextStyle(fontSize: 16.0),),
         title: Center(
           child: Text("UNO PAY"),
         ),
+
+
         actions: <Widget>[
           Icon(Icons.wifi, size: 12.0,),
-          Icon(Icons.battery_full_outlined, size: 12.0,),
-          Icon(Icons.signal_cellular_0_bar, size: 12.0,),
+          Icon(Icons.battery_full_outlined, size: 9.0,),
+          Icon(Icons.signal_cellular_0_bar, size: 9.0,),
         ],
       ),
+
+
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            Image(
-              image: AssetImage('images/WhatsApp Image 2023-10-11 at 13.55.04.jpeg'),
-              width: 375,
-              height: 435,
+            Positioned(
+              top: 180.0,
+              child: Image(
+                image: AssetImage('images/WhatsApp Image 2023-10-14 at 00.19.03.jpeg'),
+                width: 114,
+                height: 105,
+              ),
             ),
-            SizedBox(height: 24.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 146,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    border: Border.all(
-                      width: 2,
-                      color: Color.fromARGB(255, 0, 0, 0),
+
+            Positioned(
+              top: 300.0,
+              child: Text('UNO PAY',
+              style: TextStyle(
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black
+
+              ),
+            ),
+            ),
+
+
+            Positioned(
+              top: 360.0,
+              child: Container(
+                width: 300, 
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(1, 35, 41, 1), 
+                  borderRadius: BorderRadius.circular(10), 
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3),
                     ),
-                  ),
-                  
-                  child: Center(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
+                  ],
+                ),
+
+
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+
+
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Username',
+                          contentPadding: EdgeInsets.all(10),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(Icons.person),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(width: 53),  // Jarak antara "Login" dan "Sign Up"
-                Container(
-                  width: 146,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: 16,
+
+
+                    SizedBox(height: 10),
+
+
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+
+
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Password',
+                          contentPadding: EdgeInsets.all(10),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(Icons.lock),
+                        ),
+
+                        obscureText: true,
                       ),
                     ),
-                  ),
+
+
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: double.infinity,
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+
+
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-            SizedBox(height: 22.0),
-
-            Text(
-              "Selamat Datang di Uno Pay!",
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 22.0),
-Text("      Bergabunglah dengan jutaan pelanggan puas yang telah memilih Uno Pay sebagai solusi pembayaran mereka", style: TextStyle(fontSize: 14)
-,),
-SizedBox(height: 16.0),
-Text("Jadilah bagian dari perubahan dan buat hidup Anda lebih mudah dengan kami", style: TextStyle(fontSize: 14),),
-
           ],
         ),
       ),
